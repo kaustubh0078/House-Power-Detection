@@ -1,0 +1,40 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# --- Virtual environment ---
+.env
+.venv
+env/
+venv/
+ENV/
+*.env
+
+# --- Jupyter Notebook ---
+.ipynb_checkpoints
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- VS Code ---
+.vscode/
+
+# --- Data (ignore raw big files) ---
+data/*.txt
+data/raw/
+data/household_power_consumption.txt
+
+# --- Large processed files (keep only small demo CSVs) ---
+data/processed/*.csv
+!data/processed/power_consumption_hourly.csv  # keep small sample
+
+# --- Results ---
+results/*.png
+results/*.txt
+
+# --- Streamlit cache ---
+.streamlit/
