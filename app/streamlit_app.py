@@ -35,11 +35,12 @@ if uploaded_file is not None:
     processed_path = "data/processed/power_consumption_hourly.csv"
     df = load_and_process(raw_path, processed_path, freq="H")
 else:
-    processed_path = "data/processed/power_consumption_hourly.csv"
+    processed_path = "data/processed/power_consumption_sample.csv"
     if not os.path.exists(processed_path):
-        st.error("⚠️ Please run preprocessing first to generate the processed file.")
+        st.error("⚠️ No dataset available. Please upload a file.")
         st.stop()
     df = pd.read_csv(processed_path, parse_dates=["datetime"], index_col="datetime")
+
 
 st.write("### Processed Data Preview")
 st.dataframe(df.head())
